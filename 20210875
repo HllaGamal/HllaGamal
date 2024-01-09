@@ -1,0 +1,67 @@
+//problem 2
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    //declare and input the string
+    cout << "Enter your speech: " << endl;
+    string speech;
+    getline(cin, speech);
+// in this for loop we have pos variable that keep tracking the position we are searching for "him"if found it return the position of "him"if not "string::npos" return not found
+    for (size_t pos = 0; (pos = speech.find(" him ", pos)) != string::npos; pos += 11) {
+        //iusing function replace we " him " which is 4 characters with "him or her" in "speech"
+        //pos is the starting position of substring to be replaced
+        //4 the length of the substring to be replaced
+        //"him or her" is the replacement text
+        speech.replace(pos, 4, " him or her ");
+    }
+    for (size_t pos = 0; (pos = speech.find(" Him ", pos)) != string::npos; pos += 11) {
+        speech.replace(pos, 4, " Him or Her ");
+    }
+
+    for (size_t pos = 0; (pos = speech.find(" him?", pos)) != string::npos; pos += 11) {
+        speech.replace(pos, 5, " him or her? ");
+    }
+
+    for (size_t pos = 0; (pos = speech.find(" him!", pos)) != string::npos; pos += 11) {
+        speech.replace(pos, 5, " him or her! ");
+    }
+
+    for (size_t pos = 0; (pos = speech.find(" him.", pos)) != string::npos; pos += 11) {
+        speech.replace(pos, 5, " him or her.");
+    }
+
+    for (size_t pos = 0; (pos = speech.find(" him,", pos)) != string::npos; pos += 11) {
+        speech.replace(pos, 5, " him or her,");
+    }
+
+    for (size_t pos = 0; (pos = speech.find(" He ", pos)) != string::npos; pos += 10) {
+        speech.replace(pos, 3, " He or She ");
+    }
+    for (size_t pos = 0; (pos = speech.find(" he ", pos)) != string::npos; pos += 10) {
+        speech.replace(pos, 3, " he or she ");
+    }
+    for (size_t pos = 0; (pos = speech.find(" His ", pos)) != string::npos; pos += 11) {
+        speech.replace(pos, 4, " His or Her ");
+    }
+    for (size_t pos = 0; (pos = speech.find(" his ", pos)) != string::npos; pos += 11) {
+        speech.replace(pos, 4, " his or her ");
+    }
+    for (size_t pos = 0; (pos = speech.find(" his?", pos)) != string::npos; pos += 11) {
+        speech.replace(pos, 5, " his or her?");
+    }
+    for (size_t pos = 0; (pos = speech.find(" his!", pos)) != string::npos; pos += 11) {
+        speech.replace(pos, 5, " his or her!");
+    }
+    for (size_t pos = 0; (pos = speech.find(" his.", pos)) != string::npos; pos += 11) {
+        speech.replace(pos, 5, " his or her.");
+    }
+    for (size_t pos = 0; (pos = speech.find(" his,", pos)) != string::npos; pos += 11) {
+        speech.replace(pos, 5, " his or her,");
+    }
+
+    cout << speech << endl;
+    return 0;
+}
